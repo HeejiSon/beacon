@@ -113,19 +113,20 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                 int major = beacon.getId2().toInt(); //beacon major
                 int minor = beacon.getId3().toInt();// beacon minor
                 String address = beacon.getBluetoothAddress();
-                if(major==40001){
-                    //beacon 의 식별을 위하여 major값으로 확인
+                if(major==10001 && minor == 19641){
+                    //beacon 의 식별을 위하여 major값과 minor값으로 확인
                     //이곳에 필요한 기능 구현
                     //textView.append("ID 1 : " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
-                    textView.append("출근하셔야되는데...\n");
-                    //textView.append("Beacon Bluetooth Id : "+address+"\n");
-                    //textView.append("Beacon UUID : "+uuid+"\n");
+                    textView.append("MiniBeacon_15183\n");
+                    textView.append("Beacon Bluetooth Id : "+address+"\n");
+                    textView.append("Beacon UUID : "+uuid+"\n");
 
                 }else{
                     //나머지 비콘검색
-                    textView.append("Beacon ID: " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
+                    textView.append("other Beacon ID: " + beacon.getId2() +  " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
                     textView.append("Beacon Bluetooth Id : "+address+"\n");
                     textView.append("Beacon UUID : "+uuid+"\n");
+
                 }
 
             }
