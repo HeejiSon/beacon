@@ -116,8 +116,9 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                 if(major==10001 && minor == 19641){
                     //beacon 의 식별을 위하여 major값과 minor값으로 확인
                     //이곳에 필요한 기능 구현
-                    //textView.append("ID 1 : " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
-                    textView.append("MiniBeacon_15183\n");
+                    textView.append("Name: MiniBeacon_15183\n");
+                    textView.append("major ID : " + beacon.getId2() + " / " + "minor ID : " + beacon.getId3()  + "\n");
+                    textView.append("Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
                     textView.append("Beacon Bluetooth Id : "+address+"\n");
                     textView.append("Beacon UUID : "+uuid+"\n");
 
